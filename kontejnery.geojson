@@ -1,0 +1,348 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "ZPK_O_Kont_TOstan_b",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:5514"
+		}
+	},
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -741687.4500369802, -1044981.8600061499 ]
+			},
+			"properties" : {
+				"OBJECTID" : 1,
+				"ID" : 5597,
+				"STATIONNUMBER" : "0002/-477",
+				"STATIONNAME" : "Máchova 1137/8",
+				"CITYDISTRICTRUIANCODE" : 500089,
+				"CITYDISTRICT" : "Praha 2",
+				"PRISTUP" : "obyvatelům domu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -742768.5799589977, -1045515.6700182669 ]
+			},
+			"properties" : {
+				"OBJECTID" : 2,
+				"ID" : 5602,
+				"STATIONNUMBER" : "0002/-485",
+				"STATIONNAME" : "Nezamyslova 726/5",
+				"CITYDISTRICTRUIANCODE" : 500089,
+				"CITYDISTRICT" : "Praha 2",
+				"PRISTUP" : "obyvatelům domu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -741954.7299929783, -1044951.850011088 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3,
+				"ID" : 5606,
+				"STATIONNUMBER" : "0002/-489",
+				"STATIONNAME" : "Belgická 278/4",
+				"CITYDISTRICTRUIANCODE" : 500089,
+				"CITYDISTRICT" : "Praha 2",
+				"PRISTUP" : "obyvatelům domu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -741199.3900173306, -1043261.4299893789 ]
+			},
+			"properties" : {
+				"OBJECTID" : 4,
+				"ID" : 5623,
+				"STATIONNUMBER" : "0003/-113",
+				"STATIONNAME" : "Husitská 106/1",
+				"CITYDISTRICTRUIANCODE" : 500097,
+				"CITYDISTRICT" : "Praha 3",
+				"PRISTUP" : "obyvatelům domu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -740443.2300418168, -1044573.9899732955 ]
+			},
+			"properties" : {
+				"OBJECTID" : 5,
+				"ID" : 5624,
+				"STATIONNUMBER" : "0003/-114",
+				"STATIONNAME" : "Slezská 2140/118",
+				"CITYDISTRICTRUIANCODE" : 500097,
+				"CITYDISTRICT" : "Praha 3",
+				"PRISTUP" : "obyvatelům domu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -741159.3439239226, -1045416.7623345517 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3032,
+				"ID" : 1448,
+				"STATIONNUMBER" : "0010/ 098",
+				"STATIONNAME" : "U vršovického nádraží 30/30",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738804.8004115485, -1045253.1012614928 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3033,
+				"ID" : 1452,
+				"STATIONNUMBER" : "0010/ 102",
+				"STATIONNAME" : "Murmanská 1246/13",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738674.197433047, -1045797.888071809 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3034,
+				"ID" : 1453,
+				"STATIONNUMBER" : "0010/ 103",
+				"STATIONNAME" : "Pod altánem 360/49",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -740050.7934064232, -1046376.7660765089 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3035,
+				"ID" : 1456,
+				"STATIONNUMBER" : "0010/ 106",
+				"STATIONNAME" : "Na pahorku 1131/12",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -739443.5684063882, -1045335.8494478725 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3036,
+				"ID" : 1457,
+				"STATIONNUMBER" : "0010/ 107",
+				"STATIONNAME" : "Bajkalská 1189/3",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738667.8800340891, -1045259.7799603939 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3037,
+				"ID" : 1458,
+				"STATIONNUMBER" : "0010/ 108",
+				"STATIONNAME" : "V předpolí 1452/30",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738074.7567317337, -1045784.2851740457 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3038,
+				"ID" : 1459,
+				"STATIONNUMBER" : "0010/ 109",
+				"STATIONNAME" : "Průběžná 1142/34",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -737447.3589350209, -1046195.9123062827 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3039,
+				"ID" : 1460,
+				"STATIONNUMBER" : "0010/ 110",
+				"STATIONNAME" : "Dubečská 1108/32",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -737549.1524182633, -1045827.0356670097 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3040,
+				"ID" : 1461,
+				"STATIONNUMBER" : "0010/ 111",
+				"STATIONNAME" : "Dubečská 2138/21",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -737174.4716799445, -1046168.3209108226 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3041,
+				"ID" : 1462,
+				"STATIONNUMBER" : "0010/ 112",
+				"STATIONNAME" : "Doubravčická 1181/27",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -737767.467382323, -1047017.88237096 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3042,
+				"ID" : 1468,
+				"STATIONNUMBER" : "0010/ 118",
+				"STATIONNAME" : "Ostružinová 2185/32",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738103.8185269497, -1046994.440674819 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3043,
+				"ID" : 1469,
+				"STATIONNUMBER" : "0010/ 119",
+				"STATIONNAME" : "V korytech 3077/35",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -740315.110362906, -1045649.1852962896 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3044,
+				"ID" : 1471,
+				"STATIONNUMBER" : "0010/ 121",
+				"STATIONNAME" : "Moskevská 1464/61",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -736959.793215286, -1046033.4243330322 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3045,
+				"ID" : 1476,
+				"STATIONNUMBER" : "0010/ 126",
+				"STATIONNAME" : "Vyžlovská 3130/1",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -737778.9477804303, -1045779.2344748788 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3046,
+				"ID" : 1479,
+				"STATIONNUMBER" : "0010/ 129",
+				"STATIONNAME" : "Krupská 1742/6",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -738027.7509394735, -1045726.9138834924 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3047,
+				"ID" : 1483,
+				"STATIONNUMBER" : "0010/ 133",
+				"STATIONNAME" : "Srbínská 1211/10",
+				"CITYDISTRICTRUIANCODE" : 500224,
+				"CITYDISTRICT" : "Praha 10",
+				"PRISTUP" : "volně"
+			}
+		}
+	]
+}
