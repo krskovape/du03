@@ -1,4 +1,5 @@
 import json
+from json.decoder import JSONDecodeError
 from funkce import prevod_souradnic, vypocet_vzdalenosti
 
 try:
@@ -18,9 +19,14 @@ try:
 
         #převod souřadnic adresních bodů do S-JTSK
         for feature in adresy["features"]:
-            x = feature["geometry"]["coordinates"][0]
-            y = feature["geometry"]["coordinates"][1]
-            feature["geometry"]["souřadnice"] = prevod_souradnic(x,y)
+            try:
+                x = float(feature["geometry"]["coordinates"][0])
+                y = float(feature["geometry"]["coordinates"][1])
+                feature["geometry"]["souřadnice"] = prevod_souradnic(x,y)
+                id = feature["properties"]["@id"]
+            except ValueError:
+                print(f"U adresního bodu {id} jsou chybně zadané souřadnice a program ho přeskočí.")
+                continue
 
         #hledání nejbližšího kontejneru
         max_vzdalenost = 0
@@ -28,20 +34,31 @@ try:
         counter_adresy = 0
 
         for feature in adresy['features']:
-            x1 = feature["geometry"]["souřadnice"][0]
-            y1 = feature["geometry"]["souřadnice"][1]
-            min_vzdalenost = 0
+            try:
+                x1 = float(feature["geometry"]["souřadnice"][0])
+                y1 = float(feature["geometry"]["souřadnice"][1])
+                id_adresa = feature["properties"]["@id"]
+                min_vzdalenost = 0
+            except ValueError:
+                print(f"U adresního bodu {id_adresa} jsou chybně zadané souřadnice a program ho přeskočí.") 
+                continue
 
             #výpočet minimální vzdálenosti
             for kontejner in verejne_kontejnery:
-                x2 = kontejner["geometry"]["coordinates"][0]
-                y2 = kontejner["geometry"]["coordinates"][1]
+                try:
+                    x2 = float(kontejner["geometry"]["coordinates"][0])
+                    y2 = float(kontejner["geometry"]["coordinates"][1])
+                    id_kontejner = kontejner["properties"]["ID"]
+                except ValueError:
+                    print(f"U kontejneru {id_kontejner} jsou chybně zadané souřadnice a program ho přeskočí")
+                    continue
+
                 vzdalenost = vypocet_vzdalenosti(x1,y1,x2,y2)
                 if min_vzdalenost == 0:
                     min_vzdalenost = vzdalenost
                 if vzdalenost < min_vzdalenost:
                     min_vzdalenost = vzdalenost
-            
+
             #kontrola, že minimální vzdálenost není větší než 10 km
             try:
                 min_vzdalenost < 10000
@@ -67,4 +84,5 @@ except FileNotFoundError:
     print("Zadaný soubor se vstupními daty nelze otevřít. Soubor neexistuje, nebo je chybně zadaná cesta k jeho umístění.")
 except PermissionError:
     print("Program nemá dostatečná oprávnění ke vstupnímu nebo výstupnímu programu.")
-
+except JSONDecodeError:
+    print("Vstupní soubor není platný JSON.")
