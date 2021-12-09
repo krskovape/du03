@@ -17,24 +17,15 @@ try:
                 verejne_kontejnery.append(feature)
                 counter_kontejnery += 1
 
-        #převod souřadnic adresních bodů do S-JTSK
-        for feature in adresy["features"]:
-            try:
-                x = float(feature["geometry"]["coordinates"][0])
-                y = float(feature["geometry"]["coordinates"][1])
-                feature["geometry"]["souřadnice"] = prevod_souradnic(x,y)
-                id = feature["properties"]["@id"]
-            except ValueError:
-                print(f"U adresního bodu {id} jsou chybně zadané souřadnice a program ho přeskočí.")
-                continue
-
         #hledání nejbližšího kontejneru
         max_vzdalenost = 0
         sum_vzdalenost = 0
         counter_adresy = 0
 
         for feature in adresy['features']:
+            #převedení souřadnic adresních bodů do S-JTSK
             try:
+                feature["geometry"]["souřadnice"] = prevod_souradnic(feature["geometry"]["coordinates"][0], feature["geometry"]["coordinates"][1])
                 x1 = float(feature["geometry"]["souřadnice"][0])
                 y1 = float(feature["geometry"]["souřadnice"][1])
                 id_adresa = feature["properties"]["@id"]
@@ -50,7 +41,7 @@ try:
                     y2 = float(kontejner["geometry"]["coordinates"][1])
                     id_kontejner = kontejner["properties"]["ID"]
                 except ValueError:
-                    print(f"U kontejneru {id_kontejner} jsou chybně zadané souřadnice a program ho přeskočí")
+                    print(f"U kontejneru {id_kontejner} jsou chybně zadané souřadnice a program ho přeskočí.")
                     continue
 
                 vzdalenost = vypocet_vzdalenosti(x1,y1,x2,y2)
