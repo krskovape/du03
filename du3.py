@@ -20,23 +20,13 @@ counter_adresy = 0
 
 for feature in adresy['features']:
     #převedení souřadnic adresních bodů do S-JTSK
-    try:
-        feature["geometry"]["coordinates_sjtsk"] = list(prevod_souradnic(*feature["geometry"]["coordinates"]))
-        x1,y1 = feature["geometry"]["coordinates_sjtsk"]
-        id_adresa = feature["properties"]["@id"]
-    except ValueError:
-        print(f"U adresního bodu {id_adresa} jsou chybně zadané souřadnice a program ho přeskočí.") 
-        continue
+    feature["geometry"]["coordinates_sjtsk"] = list(prevod_souradnic(*feature["geometry"]["coordinates"]))
+    x1,y1 = feature["geometry"]["coordinates_sjtsk"]
+    id_adresa = feature["properties"]["@id"]
 
     #výpočet minimální vzdálenosti
     for kontejner in verejne_kontejnery:
-        try:
-            x2,y2 = kontejner["geometry"]["coordinates"]
-            id_kontejner = kontejner["properties"]["ID"]
-        except ValueError:
-            print(f"U kontejneru {id_kontejner} jsou chybně zadané souřadnice a program ho přeskočí.")
-            continue
-
+        x2,y2 = kontejner["geometry"]["coordinates"]
         vzdalenost = vypocet_vzdalenosti(x1,y1,x2,y2)
         if vzdalenost < min_vzdalenost:
             min_vzdalenost = vzdalenost
