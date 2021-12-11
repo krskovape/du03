@@ -18,6 +18,7 @@ try:
                 counter_kontejnery += 1
 
         #hledání nejbližšího kontejneru
+        min_vzdalenost = float('inf')
         max_vzdalenost = 0
         sum_vzdalenost = 0
         counter_adresy = 0
@@ -25,11 +26,9 @@ try:
         for feature in adresy['features']:
             #převedení souřadnic adresních bodů do S-JTSK
             try:
-                feature["geometry"]["souřadnice"] = prevod_souradnic(feature["geometry"]["coordinates"][0], feature["geometry"]["coordinates"][1])
-                x1 = float(feature["geometry"]["souřadnice"][0])
-                y1 = float(feature["geometry"]["souřadnice"][1])
+                feature["geometry"]["coordinates_sjtsk"] = list(prevod_souradnic(*feature["geometry"]["coordinates"]))
+                x1,y1 = feature["geometry"]["coordinates_sjtsk"]
                 id_adresa = feature["properties"]["@id"]
-                min_vzdalenost = 0
             except ValueError:
                 print(f"U adresního bodu {id_adresa} jsou chybně zadané souřadnice a program ho přeskočí.") 
                 continue
@@ -37,24 +36,20 @@ try:
             #výpočet minimální vzdálenosti
             for kontejner in verejne_kontejnery:
                 try:
-                    x2 = float(kontejner["geometry"]["coordinates"][0])
-                    y2 = float(kontejner["geometry"]["coordinates"][1])
+                    x2,y2 = kontejner["geometry"]["coordinates"]
                     id_kontejner = kontejner["properties"]["ID"]
                 except ValueError:
                     print(f"U kontejneru {id_kontejner} jsou chybně zadané souřadnice a program ho přeskočí.")
                     continue
 
                 vzdalenost = vypocet_vzdalenosti(x1,y1,x2,y2)
-                if min_vzdalenost == 0:
-                    min_vzdalenost = vzdalenost
                 if vzdalenost < min_vzdalenost:
                     min_vzdalenost = vzdalenost
 
             #kontrola, že minimální vzdálenost není větší než 10 km
-            try:
-                min_vzdalenost < 10000
-            except:
-                print("Vzdálenost k nejbližšímu kontejneru je větší než 10 km.")
+            if min_vzdalenost > 10000:
+                print(f"U adresního bodu {id_adresa} je vzdálenost k nejbližšímu kontejneru větší než 10 km.")
+                quit()
             
             if min_vzdalenost > max_vzdalenost:
                 max_vzdalenost = min_vzdalenost
