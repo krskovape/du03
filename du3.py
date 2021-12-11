@@ -1,4 +1,5 @@
 from funkce import prevod_souradnic, vypocet_vzdalenosti, nacteni_souboru
+from statistics import median
 
 #načtení vstupních souborů
 adresy = nacteni_souboru("adresy.geojson")
@@ -17,6 +18,7 @@ min_vzdalenost = float('inf')
 max_vzdalenost = 0
 sum_vzdalenost = 0
 counter_adresy = 0
+seznam_vzdalenosti = []
 
 for feature in adresy['features']:
     #převedení souřadnic adresních bodů do S-JTSK
@@ -42,11 +44,14 @@ for feature in adresy['features']:
         cislo_pop = feature["properties"]["addr:housenumber"]
 
     sum_vzdalenost += min_vzdalenost
+    seznam_vzdalenosti.append(min_vzdalenost)
     counter_adresy += 1
 
 prumerna_vzdalenost = int(sum_vzdalenost / counter_adresy)
+median_vzdalenosti = int(median(seznam_vzdalenosti))
 
 print(f"Načteno {counter_adresy} adresních bodů.")
 print(f"Načteno {counter_kontejnery} veřejných kontejnerů.\n")
 print(f"Průměrná vzdálenost ke kontejneru je {prumerna_vzdalenost} m.")
-print(f"K nejbližšímu kontejneru je to nejdále z adresy {ulice} {cislo_pop} a to {max_vzdalenost} m.\n")
+print(f"K nejbližšímu kontejneru je to nejdále z adresy {ulice} {cislo_pop} a to {max_vzdalenost} m.")
+print(f"Medián vzdálenosti ke kontejneru je {median_vzdalenosti} m.\n")
