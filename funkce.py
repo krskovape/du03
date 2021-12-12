@@ -10,7 +10,7 @@ def prevod_souradnic(x,y):
 
 #výpočet vzdálenosti mezi vstupními body
 def vypocet_vzdalenosti(x1,y1,x2,y2):
-    return int(sqrt((x2-x1)**2 + (y2-y1)**2))
+    return (sqrt((x2-x1)**2 + (y2-y1)**2))
 
 #načtení souboru a ošetření nekorektního vstupu
 def nacteni_souboru(nazev_souboru):

@@ -17,7 +17,6 @@ for feature in kontejnery["features"]:
 min_vzdalenost = float('inf')
 max_vzdalenost = 0
 sum_vzdalenost = 0
-counter_adresy = 0
 seznam_vzdalenosti = []
 
 for feature in adresy['features']:
@@ -35,23 +34,25 @@ for feature in adresy['features']:
 
     #kontrola, že minimální vzdálenost není větší než 10 km
     if min_vzdalenost > 10000:
-        print(f"U adresního bodu {id_adresa} je vzdálenost k nejbližšímu kontejneru větší než 10 km.")
-        quit()
-    
-    if min_vzdalenost > max_vzdalenost:
-        max_vzdalenost = min_vzdalenost
         ulice = feature["properties"]["addr:place"]
         cislo_pop = feature["properties"]["addr:housenumber"]
+        print(f"U adresního bodu {id_adresa} s adresou {ulice} {cislo_pop} je vzdálenost k nejbližšímu kontejneru větší než 10 km.")
+        quit()
+    
+    #přiřazení do proměnné, pokud je vzdálenost větší než aktuální maximální vzdálenost
+    if min_vzdalenost > max_vzdalenost:
+        max_vzdalenost = min_vzdalenost
+        ulice_max = feature["properties"]["addr:place"]
+        cislo_pop_max = feature["properties"]["addr:housenumber"]
 
     sum_vzdalenost += min_vzdalenost
     seznam_vzdalenosti.append(min_vzdalenost)
-    counter_adresy += 1
 
-prumerna_vzdalenost = int(sum_vzdalenost / counter_adresy)
-median_vzdalenosti = int(median(seznam_vzdalenosti))
+prumerna_vzdalenost = (sum_vzdalenost / len(seznam_vzdalenosti))
+median_vzdalenosti = (median(seznam_vzdalenosti))
 
-print(f"Načteno {counter_adresy} adresních bodů.")
+print(f"Načteno {len(seznam_vzdalenosti)} adresních bodů.")
 print(f"Načteno {counter_kontejnery} veřejných kontejnerů.\n")
-print(f"Průměrná vzdálenost ke kontejneru je {prumerna_vzdalenost} m.")
-print(f"K nejbližšímu kontejneru je to nejdále z adresy {ulice} {cislo_pop} a to {max_vzdalenost} m.")
-print(f"Medián vzdálenosti ke kontejneru je {median_vzdalenosti} m.\n")
+print(f"Průměrná vzdálenost ke kontejneru je {prumerna_vzdalenost:.1f} m.")
+print(f"K nejbližšímu kontejneru je to nejdále z adresy {ulice_max} {cislo_pop_max} a to {max_vzdalenost:.1f} m.")
+print(f"Medián vzdálenosti ke kontejneru je {median_vzdalenosti:.1f} m.\n")
