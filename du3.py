@@ -1,6 +1,8 @@
 from funkce import prevod_souradnic, vypocet_vzdalenosti, nacteni_souboru
 from statistics import median
 
+MAX_VZD = 10000
+
 #načtení vstupních souborů
 adresy = nacteni_souboru("adresy.geojson")
 kontejnery = nacteni_souboru("kontejnery.geojson")
@@ -33,7 +35,7 @@ for feature in adresy['features']:
             min_vzdalenost = vzdalenost
 
     #kontrola, že minimální vzdálenost není větší než 10 km
-    if min_vzdalenost > 10000:
+    if min_vzdalenost > MAX_VZD:
         ulice = feature["properties"]["addr:place"]
         cislo_pop = feature["properties"]["addr:housenumber"]
         print(f"U adresního bodu {id_adresa} s adresou {ulice} {cislo_pop} je vzdálenost k nejbližšímu kontejneru větší než 10 km.")
